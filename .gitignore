@@ -1,0 +1,65 @@
+# Competition data and derived data (not cleared for redistribution)
+/data/*
+!/data/README.md
+!/data/train.csv
+/images/*
+!/images/README.md
+!/images/train/
+/images/train/*
+!/images/train/demo1/
+!/images/train/demo1/1.png
+!/images/train/demo2/
+!/images/train/demo2/1.png
+/base_downloads/
+/embeddings/
+
+# Downloaded and trained models
+/models/*
+!/models/README.md
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.bin
+
+# Predictions, logs, submissions, and experiment artifacts
+/outputs/*
+!/outputs/README.md
+/submissions/
+*.log
+
+# Solution reports contain personal information; publish only sanitized copies.
+/Nishika_LLM_解法_SSS_lab.pdf
+/Nishika_LLM_解法_SSS_lab.pptx
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*credentials*.json
+kaggle.json
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.uv-cache/
+
+# Notebooks and editors
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.swp
+
+# Operating systems
+.DS_Store
+Thumbs.db
+desktop.ini

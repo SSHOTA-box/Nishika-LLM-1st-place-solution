@@ -1,0 +1,33 @@
+{
+    "BASE_DOWNLOADS": "./base_downloads",
+    "CODE_DIR": "./code",
+    "DATA_DIR": "./data",
+    "IMAGE_TEST_DIR": "./images/test",
+    "IMAGE_TRAIN_DIR": "./images/train",
+    "EMBEDDING_DIR": "./embeddings",
+    "MODEL_DIR": "./models",
+    "OUTPUT_DIR": "./outputs",
+    "SUBMISSION_DIR": "./submissions/",
+    "LoRA_DIR": "./models/LoRA",
+    "SEED": 42,
+
+    "LORA_ADAPTER":"./models/LoRA/LoRA_Qwen3-VL-8B-Instruct/checkpoint-1599", 
+
+    "OUTPUT_PREDICTv1": "./outputs/LoRA_inference/v1_k100",
+    "OUTPUT_PREDICTv2": "./outputs/LoRA_inference/v2_k100",
+    "OUTPUT_FINAL_SUBMIT": "./outputs/LoRA_inference/final_submission",
+
+    
+    "--- Model Paths ---": "各コードから直接アクセスするためのパス",
+    "QWEN_MODEL_PATH": "./models/Qwen3-VL-8B-Instruct",
+    "PREDICTOR_MODEL_PATH": "./models/predicter_LLM",
+
+    "--- Download List ---": "初期構築時に一括ダウンロードするための設定",
+    "MODELS_TO_DOWNLOAD": [
+        {
+            "name": "qwen3-vl-8b-instruct",
+            "repo_id": "Qwen/Qwen3-VL-8B-Instruct",
+            "local_path": "./models/Qwen3-VL-8B-Instruct"
+        }
+    ]
+}

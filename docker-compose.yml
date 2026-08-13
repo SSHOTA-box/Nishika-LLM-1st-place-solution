@@ -1,0 +1,18 @@
+services:
+  nishika-env:
+    build: .
+    container_name: nishika_llm_container
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    
+    shm_size: '20gb'
+    
+    volumes:
+      - ./:/workspace
+    tty: true
+    stdin_open: true

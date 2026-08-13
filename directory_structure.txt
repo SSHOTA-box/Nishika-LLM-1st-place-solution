@@ -1,0 +1,9 @@
+./code
+./data
+./docs
+./docs/assets
+./images
+./images/test
+./images/train
+./models
+./outputs
