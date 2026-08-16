@@ -1,6 +1,7 @@
 [English](README.md) | [日本語](README_JA.md)
 
 # Revamp × Nishika LLM Competition — 1st Place Solution
+※The Japanese version is the most up-to-date. If you would like more detailed information, I recommend referring to the Japanese version.
 
 Training, inference, and ensemble code used by team SSS_lab.
 
