@@ -50,7 +50,7 @@ LoRAのrankとalphaは層の役割ごとに変更しています。
 | Attention (`q/k/v/o_proj`) | 32 | 64 |
 | FFN (`gate/up/down_proj`) | 64 | 128 |
 
-コンペ後に作成した解法資料では学習を3 epochsと記録していますが、現在公開しているコードは4 epochsです。コンペで採用した`checkpoint-1599`は3-epoch相当のcheckpointです。現在の4-epoch最終adapterへ置き換えた場合に同じスコアになるかは検証していません。
+コンペ後に作成した解法資料では学習を3 epochsと記録していますが、現在公開しているコードは4 epochsです。3 epochsと4 epochsでsubmitした結果、3 epochsの方が精度が良かったので、そちらを採用しています。
 
 ## 推論設定
 
@@ -113,7 +113,7 @@ K=100で候補選択用encoderだけを変更した比較です。
 | `sonoisa/sentence-bert-base-ja-mean-tokens` | 0.6120 |
 | **主催者提供の評価用encoder** | **0.6407** |
 
-差は`+0.0287`です。評価と候補選択に同じ意味空間を使用するmetric alignmentが大きく寄与したと考えられます。主催者提供の評価用encoderは、主催者側でコンペデータを用いて追加学習されたモデルです。本repositoryでは配布しません。
+差は`+0.0287`です。評価と候補選択に同じ意味空間を使用するmetric alignmentが大きく寄与したと考えられます。また今回のコンペデータを用いていない一般的なencorder(sonoisa/sentence-bert-base-ja-mean-tokens)を用いても精度上昇が観測できたため、汎用的な手法だと考えられます。主催者提供の評価用encoderは、主催者側でコンペデータを用いて追加学習されたモデルです。本repositoryでは配布しません。
 
 ### 実験⑤ 重心からの距離
 
@@ -153,11 +153,5 @@ Oracleは、生成済み候補の正解scoreを知ったうえで最良候補を
 - 主催者提供encoderと元コンペデータを配布しないため、このrepositoryだけでは公式スコアを完全再現できません。
 - Oracleとの差から、learned reranker、image-text consistency、OCRによる事実整合性確認、cluster/medoid選択などを検討できますが、これらは未検証の将来案です。
 - CUDA samplingと学習はbit単位の決定性を保証していません。
-
-## 情報源
-
-- 2026-02-13付SSS_lab解法資料
-- 本repositoryの`code/train.py`、`code/predict_v1.py`、`code/predict_v2.py`、`code/marge.py`
-- 保存済みのCompetition Rules、Leaderboardおよびコンペ情報
 
 本資料は独立した技術アーカイブであり、株式会社リヴァンプおよびNishika株式会社の公式文書ではありません。
